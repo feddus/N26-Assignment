@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ProductInfoService</members>
+        <members>ProductInfoServiceTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>productInfoComponent</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>Contact.Product__c</members>
+        <members>Contact.Home_Country__c</members>
+        <members>Contact.ExternalId__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>ATMFee__mdt</members>
+        <members>CardReplacementCost__mdt</members>
+        <members>ProductCost__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <version>56.0</version>
+</Package>

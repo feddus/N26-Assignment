@@ -1,0 +1,49 @@
+<!-- productInfoComponent.html -->
+<template>
+    <lightning-card title="Product Information">
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Render this block if productInfo exists -->
+            <template if:true={productInfo}>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <p class="slds-text-title_bold">Product:</p>
+                        <p>{contactData.Product__c.value}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <p class="slds-text-title_bold">Cost per Calendar Month:</p>
+                        <lightning-formatted-number
+                            value={productInfo.ProductCost}
+                            format-style="currency"
+                            currency-code={productInfo.ProductCostCurrency}
+                            currency-display-as="symbol">
+                        </lightning-formatted-number>
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <p class="slds-text-title_bold">ATM Fee:</p>
+                        <lightning-formatted-number
+                            value={productInfo.ATMFee}
+                            format-style="percent-fixed"
+                            maximum-fraction-digits="2">
+                        </lightning-formatted-number>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                        <p class="slds-text-title_bold">Card Replacement Cost:</p>
+                        <lightning-formatted-number
+                            value={productInfo.CardReplacementCost}
+                            format-style="currency"
+                            currency-code={productInfo.CardReplacementCostCurrency}
+                            currency-display-as="symbol">
+                        </lightning-formatted-number>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Render this block if productInfo is not available -->
+            <template if:false={productInfo}>
+                <p class="slds-text-body_regular">No Product Info Available</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
